@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @State private var showingAlert: Bool = false
+    @State private var showingRestartAlert: Bool = false
     
     var rootWordView: some View {
         LabeledContent {
@@ -59,10 +60,16 @@ struct ContentView: View {
             }
             .toolbar {
                 Button("Restart") {
-                    withAnimation {
-                        data.restart()
-                    }
+                    showingRestartAlert = true
                 }
+            }
+            .alert("Restart Game", isPresented: $showingRestartAlert) {
+                Button("Cancel", role: .cancel, action: { })
+                Button("Confirm") {
+                    data.restart()
+                }
+            } message : {
+                Text("Are you sure?")
             }
         }
     }
