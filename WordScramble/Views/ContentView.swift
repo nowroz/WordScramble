@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var rootWord: String = WordList.shared.randomWord
-    
-    @State private var inputWord: String = ""
-    @State private var words: [String] = []
-    
-    @State private var score: Int = 0
+    @Bindable var data: GameData = .init()
     
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
@@ -21,7 +16,7 @@ struct ContentView: View {
     
     var rootWordView: some View {
         LabeledContent {
-            Text(rootWord)
+            Text(data.rootWord)
                 .font(.headline)
                 .foregroundStyle(.black)
         } label: {
@@ -40,13 +35,13 @@ struct ContentView: View {
                     }
                     
                     Section {
-                        TextField("Enter Word", text: $inputWord)
+                        TextField("Enter Word", text: $data.newWord)
                             .textInputAutocapitalization(.never)
                             .autocorrectionDisabled()
                     }
                     
                     Section("Entered Words") {
-                        ForEach(words, id: \.self) { word in
+                        ForEach(data.usedWords, id: \.self) { word in
                             LabeledContent(word) {
                                 Text("+\(word.count) points")
                             }
@@ -54,7 +49,7 @@ struct ContentView: View {
                     }
                 }
                 
-                ScoreView(score: score)
+                ScoreView(score: data.score)
                     .ignoresSafeArea(.keyboard)
             }
             .navigationTitle("WordScramble")
@@ -73,13 +68,13 @@ struct ContentView: View {
     }
     
     func addWord() {
-        let word = inputWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        let word = data.newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         if isValid(word) {
             withAnimation {
-                words.insert(word, at: 0)
-                inputWord = ""
-                score += word.count
+                data.usedWords.insert(word, at: 0)
+                data.newWord = ""
+                data.score += word.count
             }
         }
         
@@ -87,10 +82,10 @@ struct ContentView: View {
     
     func restart() {
         withAnimation {
-            rootWord = WordList.shared.randomWord
-            score = 0
-            inputWord = ""
-            words = []
+            data.rootWord = GameData.wordList.getWord()
+            data.score = 0
+            data.newWord = ""
+            data.usedWords = []
         }
     }
     
@@ -99,7 +94,7 @@ struct ContentView: View {
             return false
         }
         
-        guard word != rootWord else {
+        guard word != data.rootWord else {
             displayAlert(title: "Not Allowed", message: "Cannot use the root word.")
             return false
         }
@@ -110,7 +105,7 @@ struct ContentView: View {
         }
         
         guard isPossible(word) else {
-            displayAlert(title: "Not Possible", message: "'\(word)' cannot be formed from '\(rootWord)'.")
+            displayAlert(title: "Not Possible", message: "'\(word)' cannot be formed from '\(data.rootWord)'.")
             return false
         }
         
@@ -134,7 +129,7 @@ struct ContentView: View {
     }
     
     func isPossible(_ word: String) -> Bool {
-        var temp = rootWord
+        var temp = data.rootWord
         
         for letter in word {
             if let index = temp.firstIndex(of: letter) {
@@ -148,7 +143,7 @@ struct ContentView: View {
     }
     
     func isOriginal(_ word: String) -> Bool {
-        words.contains(word) == false
+        data.usedWords.contains(word) == false
     }
     
     func isReal(_ word: String) -> Bool {

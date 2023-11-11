@@ -14,6 +14,7 @@
 		CEAB93ED2A8814BC00AB8BD3 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = CEAB93EC2A8814BC00AB8BD3 /* start.txt */; };
 		CEAB93F22A88157400AB8BD3 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB93F12A88157400AB8BD3 /* WordList.swift */; };
 		CEAB93F42A881D6F00AB8BD3 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB93F32A881D6F00AB8BD3 /* ScoreView.swift */; };
+		CEC9BD6F2AFF577D003532C9 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9BD6E2AFF577D003532C9 /* GameData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CEAB93EC2A8814BC00AB8BD3 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		CEAB93F12A88157400AB8BD3 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		CEAB93F32A881D6F00AB8BD3 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		CEC9BD6E2AFF577D003532C9 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAB93F12A88157400AB8BD3 /* WordList.swift */,
+				CEC9BD6E2AFF577D003532C9 /* GameData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE83C6722A870B0500B55490 /* ContentView.swift in Sources */,
+				CEC9BD6F2AFF577D003532C9 /* GameData.swift in Sources */,
 				CEAB93F42A881D6F00AB8BD3 /* ScoreView.swift in Sources */,
 				CE83C6702A870B0500B55490 /* WordScrambleApp.swift in Sources */,
 				CEAB93F22A88157400AB8BD3 /* WordList.swift in Sources */,

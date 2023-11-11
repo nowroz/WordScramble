@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreView: View {
-    let score: Int
+    var score: Int
     
     var body: some View {
         VStack {
