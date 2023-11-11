@@ -15,6 +15,7 @@
 		CEAB93F22A88157400AB8BD3 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB93F12A88157400AB8BD3 /* WordList.swift */; };
 		CEAB93F42A881D6F00AB8BD3 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB93F32A881D6F00AB8BD3 /* ScoreView.swift */; };
 		CEC9BD6F2AFF577D003532C9 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9BD6E2AFF577D003532C9 /* GameData.swift */; };
+		CEC9BD712AFF71AD003532C9 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9BD702AFF71AD003532C9 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CEAB93F12A88157400AB8BD3 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		CEAB93F32A881D6F00AB8BD3 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		CEC9BD6E2AFF577D003532C9 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		CEC9BD702AFF71AD003532C9 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 		CEAB93EE2A88154E00AB8BD3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEAB93F12A88157400AB8BD3 /* WordList.swift */,
 				CEC9BD6E2AFF577D003532C9 /* GameData.swift */,
+				CEAB93F12A88157400AB8BD3 /* WordList.swift */,
+				CEC9BD702AFF71AD003532C9 /* ValidationError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				CEAB93F42A881D6F00AB8BD3 /* ScoreView.swift in Sources */,
 				CE83C6702A870B0500B55490 /* WordScrambleApp.swift in Sources */,
 				CEAB93F22A88157400AB8BD3 /* WordList.swift in Sources */,
+				CEC9BD712AFF71AD003532C9 /* ValidationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
